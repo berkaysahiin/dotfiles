@@ -6,7 +6,8 @@ MIT-licensed, see `LICENSE` at repo root.
 ## Requirements
 
 - Neovim >= 0.11 (`nvim --version`; guard in `nvim/init.lua` stops older versions early)
-- `git`, C compiler (`gcc`), `ripgrep`, `fzf`, `fd`
+- `git`, C compiler (`gcc`), `tar`, `curl`, `ripgrep`, `fzf`, `fd`
+- `tree-sitter` CLI >= 0.26.1 (needed by treesitter's `main` branch to build parsers)
 - `clangd` for C/C++ (system install is enough; custom `CLANGD_PATH` env is respected)
 - Nerd Font for icons (nvim-tree, lualine)
 - `blink.cmp` uses `prefer_rust_with_warning` fuzzy: works without a Rust toolchain, warns in `:checkhealth` if the native lib can't build
@@ -14,7 +15,7 @@ MIT-licensed, see `LICENSE` at repo root.
 ### CachyOS / Arch
 
 ```bash
-sudo pacman -S neovim git base-devel ripgrep fzf fd clang
+sudo pacman -S neovim git base-devel ripgrep fzf fd clang tree-sitter-cli
 ```
 
 ### Ubuntu (24.04 stock apt gives 0.9.5, not enough)
@@ -32,7 +33,10 @@ sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 Then deps:
 
 ```bash
-sudo apt install git build-essential ripgrep fzf fd-find clangd
+sudo apt install git build-essential ripgrep fzf fd-find clangd curl ca-certificates cargo
+cargo install tree-sitter-cli
+# ensure ~/.cargo/bin is on PATH
+# (apt's tree-sitter-cli is 0.20.x, too old — need >= 0.26.1)
 ```
 
 Alternatives: `sudo snap install nvim --classic`, or AppImage from `neovim/neovim` releases.
