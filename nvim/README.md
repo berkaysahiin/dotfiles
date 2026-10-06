@@ -65,10 +65,15 @@ Global (`nvim/lua/config/keymaps.lua`):
 | Key     | Action                 |
 | ------- | ---------------------- |
 | `Ctrl-B`| Toggle file tree      |
-| `Ctrl-F`| Find files (fzf)      |
-| `Ctrl-S`| Live grep (fzf)       |
 | `Ctrl-T`| Toggle floating term  |
 | `Ctrl-L`| Toggle diagnostics    |
+
+fzf (`nvim/lua/plugins/fzf.lua`, lazy-loaded on keypress):
+
+| Key     | Action                 |
+| ------- | ---------------------- |
+| `Ctrl-F`| Find files (fzf)      |
+| `Ctrl-S`| Live grep (fzf)       |
 
 LSP, set on `LspAttach` (`nvim/lua/config/lsp-setup.lua`): `gd gD gr gi K Ctrl-k <leader>rn <leader>ca [d ]d <leader>e`.
 Git hunks (`gitsigns`): `]c [c <leader>hs <leader>hr <leader>hp <leader>hb <leader>hd <leader>tb`.
