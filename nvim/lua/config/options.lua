@@ -16,13 +16,15 @@ vim.opt.number = true
 -- Show distance to current line.
 vim.opt.relativenumber = true
 
--- Merge signs into number column.
+-- Merge signs into number column ("number" keeps gutter width fixed,
+-- gitsigns/diagnostics overlay the number instead of shifting text).
 vim.opt.signcolumn = "number"
 
 -- Highlight line under cursor.
 vim.opt.cursorline = true
 
--- Leave statusline empty, lualine takes over.
+-- Leave statusline empty, lualine takes over (with globalstatus=true
+-- an empty 'statusline' avoids double-render on startup).
 vim.opt.statusline = ""
 
 -- No swap files, cleaner worktree.

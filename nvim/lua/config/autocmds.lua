@@ -11,6 +11,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if vim.bo[buf].buftype ~= "" then
       return
     end
-    require("config.lsp").set_lsp_keymaps(buf)
+    require("config.lsp-setup").set_lsp_keymaps(buf)
   end,
 })
