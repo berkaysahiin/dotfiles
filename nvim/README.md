@@ -59,8 +59,18 @@ Global (`nvim/lua/config/keymaps.lua`):
 | Key     | Action                 |
 | ------- | ---------------------- |
 | `Ctrl-B`| Toggle file tree      |
-| `Ctrl-T`| Toggle floating term  |
 | `Ctrl-L`| Toggle diagnostics    |
+
+Terminal (`nvim/lua/plugins/toggle-term.lua`, normal + terminal mode):
+
+| Key     | Action                 |
+| ------- | ---------------------- |
+| `Ctrl-T`| Toggle floating term  |
+
+Notes:
+
+* `Ctrl-B` is tmux's default prefix — inside tmux, either set another prefix (`set -g prefix C-a`) or rebind the tree toggle.
+* `Ctrl-S` freezes most terminals (XOFF flow control). Run `stty -ixon` or rebind if grep appears hung.
 
 fzf (`nvim/lua/plugins/fzf.lua`, lazy-loaded on keypress):
 
