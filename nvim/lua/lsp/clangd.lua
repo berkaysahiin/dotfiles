@@ -2,13 +2,15 @@
 return {
   cmd = {
     vim.env.CLANGD_PATH or 'clangd',
-    '--background-index=false', 
+    -- No background indexing: faster startup, less memory on large trees.
+    '--background-index=false',
     '--completion-style=detailed',
     '--header-insertion=iwyu',
     '--function-arg-placeholders=false',
+    -- Cap completion items to keep the popup usable.
     '--limit-results=50',
+    -- Release unused memory back to the OS.
     '--malloc-trim',
-    '--experimental-modules-support', 
   },
   filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
   root_markers = {
