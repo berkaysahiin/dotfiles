@@ -41,13 +41,13 @@ Alternatives: `sudo snap install nvim --classic`, or AppImage from `neovim/neovi
 
 ```bash
 git clone https://github.com/berkaysahiin/dotfiles.git ~/dotfiles
-mkdir -p ~/.config
+rm -rf ~/.config/nvim
 cp -r ~/dotfiles/nvim ~/.config/nvim
 nvim
 # inside: :Lazy sync, :checkhealth
 ```
 
-Update later with `git -C ~/dotfiles pull` + copy again.
+Update later with `git -C ~/dotfiles pull`, then `rm -rf ~/.config/nvim` + copy again.
 
 Treesitter parsers install on first file open (`nvim/lua/plugins/treesitter.lua`).
 `nvim/lazy-lock.json` is committed for reproducible installs; `:Lazy sync` restores exact pins.

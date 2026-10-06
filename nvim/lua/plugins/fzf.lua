@@ -1,5 +1,4 @@
 -- Main search for files and text.
--- Keys lazy-load the plugin. live-grep needs ripgrep, files() does not.
 return {
   "ibhagwan/fzf-lua",
   -- optional for icon support

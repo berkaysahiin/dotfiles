@@ -1,0 +1,4 @@
+nvim/TODO.md
+*.swp
+*.swo
+.netrwhist
