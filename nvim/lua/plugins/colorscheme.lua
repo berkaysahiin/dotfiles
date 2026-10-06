@@ -1,4 +1,3 @@
--- Theme switch.
 -- To add a theme, add one row to the table.
 local ACTIVE = "gruber-darker"
 

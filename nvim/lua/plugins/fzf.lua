@@ -1,5 +1,4 @@
 -- Main search for files and text.
--- Keys lazy-load the plugin. Needs ripgrep.
 local function fzf_ok()
   if vim.fn.executable("rg") == 0 then
     vim.notify("ripgrep (rg) not found", vim.log.levels.WARN)
