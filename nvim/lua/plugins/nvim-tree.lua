@@ -1,3 +1,5 @@
+-- File tree on the side.
+-- Toggle with Ctrl B.
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",

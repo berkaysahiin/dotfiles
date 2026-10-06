@@ -1,3 +1,5 @@
+-- Main search for files and text.
+-- Keys live in keymaps, needs ripgrep.
 return 
 {
   "ibhagwan/fzf-lua",

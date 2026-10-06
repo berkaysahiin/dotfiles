@@ -1,3 +1,5 @@
+-- Shows errors inline under the line.
+-- Default virtual text is off here.
 return
 {
     "rachartier/tiny-inline-diagnostic.nvim",
