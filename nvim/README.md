@@ -33,7 +33,6 @@ Then deps:
 
 ```bash
 sudo apt install git build-essential ripgrep fzf fd-find clangd
-# Note: Ubuntu names the binary `fdfind`; fzf-lua detects both `fd` and `fdfind`, no symlink needed.
 ```
 
 Alternatives: `sudo snap install nvim --classic`, or AppImage from `neovim/neovim` releases.
