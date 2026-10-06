@@ -1,12 +1,5 @@
 -- Main search for files and text.
-local function fzf_ok()
-  if vim.fn.executable("rg") == 0 then
-    vim.notify("ripgrep (rg) not found", vim.log.levels.WARN)
-    return false
-  end
-  return true
-end
-
+-- Keys lazy-load the plugin. live-grep needs ripgrep, files() does not.
 return {
   "ibhagwan/fzf-lua",
   -- optional for icon support
@@ -22,9 +15,7 @@ return {
     {
       "<C-F>",
       function()
-        if fzf_ok() then
-          require("fzf-lua").files()
-        end
+        require("fzf-lua").files()
       end,
       desc = "Find files (fzf)",
       silent = true,
@@ -32,9 +23,11 @@ return {
     {
       "<C-S>",
       function()
-        if fzf_ok() then
-          require("fzf-lua").live_grep()
+        if vim.fn.executable("rg") == 0 then
+          vim.notify("ripgrep (rg) not found", vim.log.levels.WARN)
+          return
         end
+        require("fzf-lua").live_grep()
       end,
       desc = "Live grep (fzf)",
       silent = true,
